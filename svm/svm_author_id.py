@@ -63,6 +63,14 @@ print "Test 10 is:", test10, pred[10]
 print "Test 26 is:", test26, pred[26]
 print "Test 50 is:", test50, pred[50]
 
+# See how many results are for Chris
+
+numChris = 0
+for result in pred:
+    if result == 1:
+        numChris += 1
+
+print numChris
 #########################################################
 
 
