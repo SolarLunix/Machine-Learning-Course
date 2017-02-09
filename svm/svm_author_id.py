@@ -32,7 +32,7 @@ features_train = features_train[:len(features_train)/100]
 labels_train = labels_train[:len(labels_train)/100]
 
 # Initialise SVM
-trainer = SVC(kernel="rbf")
+trainer = SVC(C=10000, kernel="rbf")
 
 # Train the trainer
 t0 = time()
