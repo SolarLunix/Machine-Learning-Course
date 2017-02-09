@@ -9,6 +9,8 @@
 """
     
 import sys
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
 from time import time
 sys.path.append("../tools/")
 from email_preprocess import preprocess
@@ -20,11 +22,32 @@ from email_preprocess import preprocess
 features_train, features_test, labels_train, labels_test = preprocess()
 
 
-
+print "-----------------"
 
 #########################################################
 ### your code goes here ###
 
+
+# Initialise SVM
+trainer = SVC(kernel="linear")
+
+# Train the trainer
+t0 = time()
+trainer.fit(features_train, labels_train)
+print "Training time:", round(time()-t0, 3), "s"
+
+# Predict the result of new data
+t0 = time()
+pred = trainer.predict(features_test)
+print "Prediction time:", round(time()-t0, 3), "s"
+
+print "-----------------"
+
+# Determine how accurate the prediction is
+score = accuracy_score(labels_test, pred)
+
+# Display prediction score
+print "Accuracy:", score
 #########################################################
 
 
