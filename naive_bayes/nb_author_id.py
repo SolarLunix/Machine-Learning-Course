@@ -24,7 +24,7 @@ from email_preprocess import preprocess
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
-
+print "-----------------"
 
 
 #########################################################
@@ -42,6 +42,8 @@ print "Training time:", round(time()-t0, 3), "s"
 t0 = time()
 pred = gaus.predict(features_test)
 print "Prediction time:", round(time()-t0, 3), "s"
+
+print "-----------------"
 
 # Determine how accurate the prediction is
 score = accuracy_score(labels_test, pred)
