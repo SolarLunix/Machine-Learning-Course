@@ -27,8 +27,8 @@ print "\n-----------------\n"
 ### your code goes here ###
 
 # Reduce training size as per instructions
-features_train = features_train[:len(features_train)/100]
-labels_train = labels_train[:len(labels_train)/100]
+# features_train = features_train[:len(features_train)/100]
+# labels_train = labels_train[:len(labels_train)/100]
 
 # Initialise SVM
 trainer = SVC(C=10000, kernel="rbf")
