@@ -6,6 +6,8 @@ from class_vis import prettyPicture
 from time import time
 from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import AdaBoostClassifier
 
 features_train, labels_train, features_test, labels_test = makeTerrainData()
 
@@ -48,7 +50,6 @@ def kNN():
     print "Training time:", round(time() - t0, 3), "s"
 
     # Test k Nearest Neighbour
-    print "Testing kNN"
     t0 = time()
     knn_prediction = clf_knn.predict(features_test)
     print "Prediction time:", round(time() - t0, 3), "s"
@@ -60,5 +61,48 @@ def kNN():
     picture(clf_knn, "knnTest.png")
 
 
+def randomForest():
+    # Train the classifier
+    print "Perfomring Random Forest"
+    t0 = time()
+    clf_rnd_forest = RandomForestClassifier()
+    clf_rnd_forest.fit(features_train, labels_train)
+    print "Training time:", round(time() - t0, 3), "s"
+
+    # Test k Nearest Neighbour
+    t0 = time()
+    rnd_forest_prediction = clf_rnd_forest.predict(features_test)
+    print "Prediction time:", round(time() - t0, 3), "s"
+
+    # View Accuracy
+    knn_acc = accuracy_score(labels_test, rnd_forest_prediction)
+    print "Accuracy:", knn_acc
+
+    picture(clf_rnd_forest, "rndforest.png")
+
+def adaboost():
+    # Train the classifier
+    print "Perfomring Adaboost"
+    t0 = time()
+    clf_ada = AdaBoostClassifier()
+    clf_ada.fit(features_train, labels_train)
+    print "Training time:", round(time() - t0, 3), "s"
+
+    # Test k Nearest Neighbour
+    t0 = time()
+    ada_prediction = clf_ada.predict(features_test)
+    print "Prediction time:", round(time() - t0, 3), "s"
+
+    # View Accuracy
+    knn_acc = accuracy_score(labels_test, ada_prediction)
+    print "Accuracy:", knn_acc
+
+    picture(clf_ada, "ada.png")
+
+
 # Run Machine Learning Methods
 kNN()
+print "-------------------------------"
+randomForest()
+print "-------------------------------"
+adaboost()
