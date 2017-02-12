@@ -30,6 +30,8 @@ for person in enron_data:
     name = person.split(" ")
     if name[0] == "PRENTICE":
         print "Prentice stock:", enron_data.get(person).get("total_stock_value")
+    elif name[0] == "COLWELL":
+        print "Colwell Emails:", enron_data.get(person).get("from_this_person_to_poi")
 
 print "Persons of Interest:", num_poi
 
