@@ -19,5 +19,12 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
-print len(enron_data)
-print len(enron_data.get("METTS MARK"))
+print "People in list:", len(enron_data)
+print "Features per person", len(enron_data.get("METTS MARK"))
+
+num_poi = 0
+for person in enron_data:
+    if enron_data.get(person).get("poi") == 1:
+        num_poi += 1
+print "Persons of Interest:", num_poi
+
