@@ -23,15 +23,31 @@ print "People in list:", len(enron_data)
 print "Features per person", len(enron_data.get("METTS MARK"))
 
 num_poi = 0
+num_salaries = 0
+num_defined_emails = 0
 for person in enron_data:
     if enron_data.get(person).get("poi") == 1:
         num_poi += 1
+
+    if enron_data.get(person).get("salary") != "NaN":
+        num_salaries += 1
+
+    if enron_data.get(person).get("email_address") != "NaN":
+        num_defined_emails += 1
 
     name = person.split(" ")
     if name[0] == "PRENTICE":
         print "Prentice stock:", enron_data.get(person).get("total_stock_value")
     elif name[0] == "COLWELL":
         print "Colwell Emails:", enron_data.get(person).get("from_this_person_to_poi")
+    elif name[0] == "SKILLING":
+        print "Skilling stock options:", enron_data.get(person).get("exercised_stock_options")
+        print "Skilling Total Payments:", enron_data.get(person).get("total_payments")
+    elif name[0] == "LAY":
+        print "Lay Total Payments:", enron_data.get(person).get("total_payments")
+    elif name[0] == "FASTOW":
+        print "Fastow Total Payments:", enron_data.get(person).get("total_payments")
 
 print "Persons of Interest:", num_poi
-
+print "Number of defined emails:", num_defined_emails
+print "Number of defined salaries:", num_salaries

@@ -21,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/datasets_questions/explore_enron_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="33" column="84" lean-forward="false" selection-start-line="33" selection-start-column="84" selection-end-line="33" selection-end-column="84" />
+              <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -388,7 +388,7 @@
         <state relative-caret-position="675">
           <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
           <folding>
-            <element signature="e#251#261#0" expanded="true" />
+            <element signature="e#251#261#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -413,7 +413,7 @@
         <state relative-caret-position="255">
           <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
-            <element signature="e#234#244#0" expanded="true" />
+            <element signature="e#234#244#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -477,7 +477,7 @@
         <state relative-caret-position="750">
           <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="51" selection-end-column="24" />
           <folding>
-            <element signature="e#251#261#0" expanded="true" />
+            <element signature="e#251#261#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -487,7 +487,7 @@
         <state relative-caret-position="345">
           <caret line="53" column="51" lean-forward="true" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
           <folding>
-            <element signature="e#19#50#0" expanded="true" />
+            <element signature="e#19#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -511,7 +511,7 @@
     <entry file="file://$PROJECT_DIR$/datasets_questions/explore_enron_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="33" column="84" lean-forward="false" selection-start-line="33" selection-start-column="84" selection-end-line="33" selection-end-column="84" />
+          <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding />
         </state>
       </provider>
