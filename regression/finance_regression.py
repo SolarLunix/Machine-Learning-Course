@@ -43,10 +43,10 @@ reg = LinearRegression()
 reg.fit(feature_train, target_train)
 
 
-print reg.coef_
-print reg.intercept_
-print reg.score(feature_train, target_train)
-print reg.score(feature_test, target_test)
+print "Slope:", reg.coef_[0]
+print "Intercept:", reg.intercept_
+print "r-train:", reg.score(feature_train, target_train)
+print "r-test:", reg.score(feature_test, target_test)
 
 
 
