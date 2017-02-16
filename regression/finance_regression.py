@@ -42,7 +42,6 @@ test_color = "r"
 reg = LinearRegression()
 reg.fit(feature_train, target_train)
 
-
 print "Slope:", reg.coef_[0]
 print "Intercept:", reg.intercept_
 print "r-train:", reg.score(feature_train, target_train)
