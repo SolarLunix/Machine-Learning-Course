@@ -11,6 +11,7 @@ import pickle
 import numpy
 import matplotlib.pyplot as plt
 import sys
+import math
 from sklearn.cluster import KMeans
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
@@ -60,6 +61,7 @@ poi, finance_features = targetFeatureSplit( data )
 ### you'll want to change this line to 
 ### for f1, f2, _ in finance_features:
 ### (as it's currently written, the line below assumes 2 features)
+
 for f1, f2, f3 in finance_features:
     plt.scatter( f1, f2, )
 plt.savefig("PreCluster")
@@ -71,6 +73,22 @@ trainer = KMeans(n_clusters=2)
 trainer.fit(finance_features)
 
 pred = trainer.labels_
+
+eso = []
+nan_count = 0
+for entry in data_dict:
+    hold = data_dict[entry]["exercised_stock_options"]
+    if math.isnan(float(hold)):
+        nan_count += 1
+    else:
+        eso.append(hold)
+
+feature_min = min(eso)
+feature_max = max(eso)
+print "Stock Min:", feature_min
+print "Stock Max:", feature_max
+print "NaN:", nan_count
+
 
 
 ### rename the "name" parameter when you change the number of features
