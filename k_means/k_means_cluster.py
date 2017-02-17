@@ -87,8 +87,22 @@ feature_min = min(eso)
 feature_max = max(eso)
 print "Stock Min:", feature_min
 print "Stock Max:", feature_max
-print "NaN:", nan_count
+print "Stock NaN:", nan_count
 
+s = []
+nan_count = 0
+for entry in data_dict:
+    hold = data_dict[entry]["salary"]
+    if math.isnan(float(hold)):
+        nan_count += 1
+    else:
+        s.append(hold)
+
+feature_min = min(s)
+feature_max = max(s)
+print "Salary Min:", feature_min
+print "Salary Max:", feature_max
+print "Salary NaN:", nan_count
 
 
 ### rename the "name" parameter when you change the number of features
