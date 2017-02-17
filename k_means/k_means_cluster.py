@@ -11,6 +11,7 @@ import pickle
 import numpy
 import matplotlib.pyplot as plt
 import sys
+from sklearn.cluster import KMeans
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 
@@ -34,7 +35,7 @@ def Draw(pred, features, poi, mark_poi=False, name="image.png", f1_name="feature
     plt.xlabel(f1_name)
     plt.ylabel(f2_name)
     plt.savefig(name)
-    plt.show()
+    plt.savefig("PostCluster")
 
 
 
@@ -60,12 +61,15 @@ poi, finance_features = targetFeatureSplit( data )
 ### (as it's currently written, the line below assumes 2 features)
 for f1, f2 in finance_features:
     plt.scatter( f1, f2 )
-plt.show()
+plt.savefig("PreCluster")
 
 ### cluster here; create predictions of the cluster labels
 ### for the data and store them to a list called pred
 
+trainer = KMeans(n_clusters=2)
+trainer.fit(finance_features)
 
+pred = trainer.labels_
 
 
 ### rename the "name" parameter when you change the number of features
