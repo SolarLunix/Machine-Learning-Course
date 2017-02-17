@@ -8,11 +8,12 @@
 
 
 import pickle
-import numpy
+import numpy as np
 import matplotlib.pyplot as plt
 import sys
 import math
 from sklearn.cluster import KMeans
+from sklearn.preprocessing import MinMaxScaler
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 
@@ -77,8 +78,8 @@ pred = trainer.labels_
 eso = []
 nan_count = 0
 for entry in data_dict:
-    hold = data_dict[entry]["exercised_stock_options"]
-    if math.isnan(float(hold)):
+    hold = float(data_dict[entry]["exercised_stock_options"])
+    if math.isnan(hold):
         nan_count += 1
     else:
         eso.append(hold)
@@ -89,11 +90,17 @@ print "Stock Min:", feature_min
 print "Stock Max:", feature_max
 print "Stock NaN:", nan_count
 
+min_max_eso = MinMaxScaler()
+min_max_eso.fit(eso)
+dp = np.array([float(1000000)])
+dp.reshape(1, -1)
+print "1000000 is scaled to", min_max_eso.transform(dp)[0]
+
 s = []
 nan_count = 0
 for entry in data_dict:
-    hold = data_dict[entry]["salary"]
-    if math.isnan(float(hold)):
+    hold = float(data_dict[entry]["salary"])
+    if math.isnan(hold):
         nan_count += 1
     else:
         s.append(hold)
@@ -104,6 +111,11 @@ print "Salary Min:", feature_min
 print "Salary Max:", feature_max
 print "Salary NaN:", nan_count
 
+min_max_s = MinMaxScaler()
+min_max_s.fit(s)
+dp = np.array([float(200000)])
+dp.reshape(1, -1)
+print "200,000 is scaled to", min_max_s.transform(dp)[0]
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
