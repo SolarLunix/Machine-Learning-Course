@@ -4,6 +4,8 @@ import os
 import pickle
 import re
 import sys
+from nltk.corpus import stopwords
+import nltk
 
 sys.path.append( "../tools/" )
 from parse_out_email_text import parseOutText
@@ -35,6 +37,8 @@ word_data = []
 ### temp_counter helps you only look at the first 200 emails in the list so you
 ### can iterate your modifications quicker
 temp_counter = 0
+
+nltk.download()
 
 
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
