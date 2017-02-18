@@ -5,7 +5,7 @@ import pickle
 import re
 import sys
 from nltk.corpus import stopwords
-import nltk
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 sys.path.append( "../tools/" )
 from parse_out_email_text import parseOutText
@@ -38,27 +38,36 @@ word_data = []
 ### can iterate your modifications quicker
 temp_counter = 0
 
-nltk.download()
-
+sw = ["sara", "shackleton", "chris", "germani"]
 
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:
         ### only look at first 200 emails when developing
         ### once everything is working, remove this line to run over full dataset
-        temp_counter += 1
-        if temp_counter < 200:
+        #temp_counter += 1
+        if temp_counter < 100:
             path = os.path.join('..', path[:-1])
             print path
             email = open(path, "r")
 
             ### use parseOutText to extract the text from the opened email
+            email_words = parseOutText(email)
+            email_words = str(email_words)
 
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
+            for word in sw:
+                if word in email_words:
+                    email_words = email_words.replace(word, "")
 
             ### append the text to word_data
+            word_data.append(email_words)
 
             ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
+            if name == "sara":
+                from_data.append(0)
+            else:
+                from_data.append(1)
 
 
             email.close()
@@ -67,13 +76,15 @@ print "emails processed"
 from_sara.close()
 from_chris.close()
 
+#print "\n\n", word_data[152], "\n\n"
+
 pickle.dump( word_data, open("your_word_data.pkl", "w") )
 pickle.dump( from_data, open("your_email_authors.pkl", "w") )
 
-
-
-
-
 ### in Part 4, do TfIdf vectorization here
+vectorisor = TfidfVectorizer(stop_words="english")
+bow = vectorisor.fit(word_data)
 
+print len(vectorisor.vocabulary_)
+print vectorisor.get_feature_names()[34597]
 
