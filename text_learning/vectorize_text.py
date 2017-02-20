@@ -38,7 +38,7 @@ word_data = []
 ### can iterate your modifications quicker
 temp_counter = 0
 
-sw = ["sara", "shackleton", "chris", "germani", "sshacklensf"]
+sw = ["sara", "shackleton", "chris", "germani", "sshacklensf", "cgermannsf"]
 
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:

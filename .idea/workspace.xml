@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ff4deb43-c564-423f-b9af-166ee8a90932" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feature_selection/find_signature.py" afterPath="$PROJECT_DIR$/feature_selection/find_signature.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/text_learning/vectorize_text.py" afterPath="$PROJECT_DIR$/text_learning/vectorize_text.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vectorize_text.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="vectorize_text.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/text_learning/vectorize_text.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="40" column="60" lean-forward="false" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+              <caret line="40" column="74" lean-forward="false" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -43,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="find_signature.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="find_signature.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/feature_selection/find_signature.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+            <state relative-caret-position="355">
+              <caret line="82" column="4" lean-forward="true" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
               <folding>
                 <element signature="e#19#32#0" expanded="true" />
               </folding>
@@ -76,8 +75,8 @@
         <option value="$PROJECT_DIR$/outliers/enron_outliers.py" />
         <option value="$PROJECT_DIR$/k_means/k_means_cluster.py" />
         <option value="$PROJECT_DIR$/tools/parse_out_email_text.py" />
-        <option value="$PROJECT_DIR$/text_learning/vectorize_text.py" />
         <option value="$PROJECT_DIR$/feature_selection/find_signature.py" />
+        <option value="$PROJECT_DIR$/text_learning/vectorize_text.py" />
       </list>
     </option>
   </component>
@@ -166,7 +165,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.find_signature">
+  <component name="RunManager" selected="Python.vectorize_text">
     <configuration default="false" name="enron_outliers" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -395,8 +394,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.find_signature" />
-        <item index="1" class="java.lang.String" itemvalue="Python.vectorize_text" />
+        <item index="0" class="java.lang.String" itemvalue="Python.vectorize_text" />
+        <item index="1" class="java.lang.String" itemvalue="Python.find_signature" />
         <item index="2" class="java.lang.String" itemvalue="Python.parse_out_email_text" />
         <item index="3" class="java.lang.String" itemvalue="Python.k_means_cluster" />
         <item index="4" class="java.lang.String" itemvalue="Python.enron_outliers" />
@@ -733,22 +732,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/text_learning/vectorize_text.py">
+    <entry file="file://$PROJECT_DIR$/feature_selection/find_signature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="60" lean-forward="false" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+        <state relative-caret-position="355">
+          <caret line="82" column="4" lean-forward="true" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
           <folding>
-            <element signature="e#19#28#0" expanded="true" />
+            <element signature="e#19#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feature_selection/find_signature.py">
+    <entry file="file://$PROJECT_DIR$/text_learning/vectorize_text.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+        <state relative-caret-position="180">
+          <caret line="40" column="74" lean-forward="false" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
           <folding>
-            <element signature="e#19#32#0" expanded="true" />
+            <element signature="e#19#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
