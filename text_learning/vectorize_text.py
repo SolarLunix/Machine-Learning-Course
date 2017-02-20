@@ -38,7 +38,7 @@ word_data = []
 ### can iterate your modifications quicker
 temp_counter = 0
 
-sw = ["sara", "shackleton", "chris", "germani"]
+sw = ["sara", "shackleton", "chris", "germani", "sshacklensf"]
 
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:
@@ -87,4 +87,3 @@ bow = vectorisor.fit(word_data)
 
 print len(vectorisor.vocabulary_)
 print vectorisor.get_feature_names()[34597]
-
