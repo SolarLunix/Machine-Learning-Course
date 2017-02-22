@@ -146,5 +146,5 @@ plot_gallery(eigenfaces, eigenface_titles, h, w)
 pl.show()
 
 print "-----------------------------------"
-for variance in pca.explained_variance_ratio_:
-    print variance
+#for variance in pca.explained_variance_ratio_:
+    #print variance
