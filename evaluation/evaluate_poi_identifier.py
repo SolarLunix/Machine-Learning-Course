@@ -28,4 +28,30 @@ labels, features = targetFeatureSplit(data)
 
 ### your code goes here 
 
+features_train, features_test, labels_train, labels_test = train_test_split(features, labels,
+                                                                            test_size=.3, random_state=42)
+
+# Initialise Trainer
+trainer = DecisionTreeClassifier()
+
+# Train the trainer
+t0 = time()
+trainer.fit(features_train, labels_train)
+print "Training time:", round(time()-t0, 3), "s"
+
+# Predict the result of new data
+t0 = time()
+pred = trainer.predict(features_test)
+print "Prediction time:", round(time()-t0, 3), "s"
+
+print "-----------------"
+
+# Determine how accurate the prediction is
+score = accuracy_score(labels_test, pred)
+
+# Display prediction score
+print "Accuracy:", score
+
+features = len(features_train[0])
+print "Features:", features
 
