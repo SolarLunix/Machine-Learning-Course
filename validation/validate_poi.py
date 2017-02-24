@@ -12,6 +12,10 @@
 
 import pickle
 import sys
+from sklearn.model_selection import train_test_split
+from time import time
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 
@@ -25,8 +29,30 @@ features_list = ["poi", "salary"]
 data = featureFormat(data_dict, features_list)
 labels, features = targetFeatureSplit(data)
 
+### it's all yours from here forward!
 
+features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.1, random_state=42)
 
-### it's all yours from here forward!  
+# Initialise Trainer
+trainer = DecisionTreeClassifier()
 
+# Train the trainer
+t0 = time()
+trainer.fit(features_train, labels_train)
+print "Training time:", round(time()-t0, 3), "s"
 
+# Predict the result of new data
+t0 = time()
+pred = trainer.predict(features_test)
+print "Prediction time:", round(time()-t0, 3), "s"
+
+print "-----------------"
+
+# Determine how accurate the prediction is
+score = accuracy_score(labels_test, pred)
+
+# Display prediction score
+print "Accuracy:", score
+
+features = len(features_train[0])
+print "Features:", features
