@@ -31,7 +31,8 @@ labels, features = targetFeatureSplit(data)
 
 ### it's all yours from here forward!
 
-features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.1, random_state=42)
+features_train, features_test, labels_train, labels_test = train_test_split(features, labels,
+                                                                            test_size=.3, random_state=42)
 
 # Initialise Trainer
 trainer = DecisionTreeClassifier()
