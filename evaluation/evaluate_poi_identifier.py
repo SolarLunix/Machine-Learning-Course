@@ -13,7 +13,7 @@
 
 import pickle
 import sys
-from sklearn.model_selection import train_test_split
+from sklearn.cross_validation import train_test_split
 from time import time
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
@@ -59,9 +59,11 @@ print "Accuracy:", score
 features = len(features_train[0])
 print "Features:", features
 
-pred = [0] * len(labels_test)
-score = accuracy_score(labels_test, pred)
+count = 0
 
-# Display prediction score
-print "Accuracy:", score
+for i in range(0, len(pred)):
+    if pred[i] == labels_test[i] and pred[i] == 1:
+        count += 1
+
+print "The number of correct pois are:", count
 
