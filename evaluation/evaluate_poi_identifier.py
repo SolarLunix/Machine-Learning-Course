@@ -13,6 +13,10 @@
 
 import pickle
 import sys
+from sklearn.model_selection import train_test_split
+from time import time
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 
@@ -54,4 +58,10 @@ print "Accuracy:", score
 
 features = len(features_train[0])
 print "Features:", features
+
+pred = [0] * len(labels_test)
+score = accuracy_score(labels_test, pred)
+
+# Display prediction score
+print "Accuracy:", score
 
